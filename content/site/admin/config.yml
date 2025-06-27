@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - label: "Global Settings"
+        name: "global"
+        file: "content/site/global.json"
+        format: "json"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Meta Description", name: "metaDescription", widget: "string" }
+      - label: "Header"
+        name: "header"
+        file: "content/site/header.json"
+        format: "json"
+        fields:
+          - { label: "Menu Items", name: "menu", widget: "list", field: {label: "Item", name: "item", widget: "string"} }
+      - label: "Footer"
+        name: "footer"
+        file: "content/site/footer.json"
+        format: "json"
+        fields:
+          - { label: "Copyright", name: "copyright", widget: "string" }
