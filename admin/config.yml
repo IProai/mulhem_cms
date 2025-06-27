@@ -1,20 +1,7 @@
 backend:
   name: git-gateway
-  login: true
+  login: false
   auth_type: implicit
-  auth_endpoint: https://YOUR_DOMAIN/authorize
-  app_id: YOUR_CLIENT_ID
-
-media_folder: static/images/uploads
-public_folder: /images/uploads
-
-# You can add collections here as needed
-collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "src/pages"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  app_id: "${GATSBY_AUTH0_CLIENT_ID}"
+  base_url: "https://${GATSBY_AUTH0_DOMAIN}"
+  auth_endpoint: "authorize"
