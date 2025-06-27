@@ -1,51 +1,16 @@
 backend:
-  name: github
-  repo: IProai/mulhem_cms
+  name: git-gateway
   branch: main
 
-media_folder: "uploads"
-public_folder: "/uploads"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "content/pages"
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "SEO Title", name: "seo_title", widget: "string" }
-      - { label: "Meta Description", name: "meta_description", widget: "text" }
-
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Tags", name: "tags", widget: "list" }
-
-  - name: "team"
-    label: "Team Members"
-    folder: "content/team"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Position", name: "position", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Bio", name: "bio", widget: "text" }
-
-  - name: "gallery"
-    label: "Gallery"
-    folder: "content/gallery"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
