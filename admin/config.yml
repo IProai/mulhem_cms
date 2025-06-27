@@ -5,3 +5,19 @@ backend:
   app_id: "${GATSBY_AUTH0_CLIENT_ID}"
   base_url: "https://${GATSBY_AUTH0_DOMAIN}"
   auth_endpoint: "authorize"
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+media_library:
+  name: uploadcare
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
