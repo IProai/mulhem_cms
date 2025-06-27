@@ -6,11 +6,10 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
+    <!-- CMS needs a mount point to render -->
+    <div id="nc-root"></div>
     <script>
-      // Create the mount point dynamically
-      const cmsRoot = document.createElement('div');
-      cmsRoot.id = 'nc-root';
-      document.body.appendChild(cmsRoot);
+      NetlifyCms.init();
     </script>
   </body>
 </html>
