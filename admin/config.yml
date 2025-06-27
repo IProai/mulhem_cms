@@ -1,16 +1,20 @@
 backend:
   name: git-gateway
-  branch: main
+  login: true
+  auth_type: implicit
+  auth_endpoint: https://YOUR_DOMAIN/authorize
+  app_id: YOUR_CLIENT_ID
 
-media_folder: "uploads"
-public_folder: "/uploads"
+media_folder: static/images/uploads
+public_folder: /images/uploads
 
+# You can add collections here as needed
 collections:
-  - name: "global"
-    label: "Global Settings"
-    files:
-      - label: "Header"
-        name: "header"
-        file: "header.json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
